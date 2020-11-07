@@ -7,4 +7,5 @@
     <color name="MainScreenBackground">#212A40</color>
     <color name="SkyBlue">#ECF9FF</color>
     <color name="MainBlackColor">#212A40</color>
+    <color name="BlackTransparent">#33212A40</color>
 </resources>
