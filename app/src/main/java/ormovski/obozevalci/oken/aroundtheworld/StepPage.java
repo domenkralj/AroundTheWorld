@@ -46,9 +46,15 @@ public class StepPage extends Fragment {
 
         int layoutId;
         switch (page) {
-            case 0: layoutId = R.layout.step_two_screen;
+            case 0: layoutId = R.layout.step_one_screen;
                     break;
-            default: layoutId = R.layout.step_two_screen;
+            case 1: layoutId = R.layout.step_two_screen;
+                    break;
+            case 2: layoutId = R.layout.step_four_screen;
+                    break;
+            case 3: layoutId = R.layout.step_five_screen;
+                    break;
+            default: layoutId = R.layout.step_one_screen;
         }
 
         view = (MotionLayout) inflater.inflate(layoutId, container, false);
