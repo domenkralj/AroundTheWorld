@@ -5,4 +5,6 @@
     <color name="colorAccent">#03DAC5</color>
 
     <color name="MainScreenBackground">#212A40</color>
+    <color name="SkyBlue">#ECF9FF</color>
+    <color name="MainBlackColor">#212A40</color>
 </resources>
