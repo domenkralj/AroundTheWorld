@@ -19,6 +19,7 @@ public class StepPage extends Fragment {
     private static final String PAGE = "page";
 
     private int page;
+    private MotionLayout view;
 
     public StepPage() {
         // Required empty public constructor
@@ -45,15 +46,20 @@ public class StepPage extends Fragment {
 
         int layoutId;
         switch (page) {
-            // TODO: Switch statement to set the correct layout.
-            default: layoutId = R.layout.fragment_step_page;
+            case 0: layoutId = R.layout.step_two_screen;
+                    break;
+            default: layoutId = R.layout.step_two_screen;
         }
 
-        return inflater.inflate(layoutId, container, false);
+        view = (MotionLayout) inflater.inflate(layoutId, container, false);
+        return view;
     }
 
     public void setAnimationProgress(float progress) {
         // TODO: Set motion layout progress.
+        if (view != null) {
+            view.setProgress(progress);
+        }
     }
 
 }
