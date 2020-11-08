@@ -49,16 +49,18 @@ public class StepPage extends Fragment {
             case 0: layoutId = R.layout.step_one_screen;
                     break;
             case 1: layoutId = R.layout.step_two_screen;
+                break;
+            case 2: layoutId = R.layout.step_one_screen;
                     break;
-            case 2: layoutId = R.layout.step_four_screen;
+            case 3: layoutId = R.layout.step_four_screen;
                     break;
-            case 3: layoutId = R.layout.step_five_screen;
+            case 4: layoutId = R.layout.step_five_screen;
                     break;
-            case 4: layoutId = R.layout.step_six_screen;
+            case 5: layoutId = R.layout.step_six_screen;
                     break;
-            case 5: layoutId = R.layout.step_seven_screen;
+            case 6: layoutId = R.layout.step_seven_screen;
                     break;
-            case 6: layoutId = R.layout.step_eight_screen;
+            case 7: layoutId = R.layout.step_eight_screen;
                     break;
             default: layoutId = R.layout.step_one_screen;
         }
