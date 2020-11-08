@@ -54,6 +54,12 @@ public class StepPage extends Fragment {
                     break;
             case 3: layoutId = R.layout.step_five_screen;
                     break;
+            case 4: layoutId = R.layout.step_six_screen;
+                    break;
+            case 5: layoutId = R.layout.step_seven_screen;
+                    break;
+            case 6: layoutId = R.layout.step_eight_screen;
+                    break;
             default: layoutId = R.layout.step_one_screen;
         }
 
@@ -67,5 +73,7 @@ public class StepPage extends Fragment {
             view.setProgress(progress);
         }
     }
+
+
 
 }
