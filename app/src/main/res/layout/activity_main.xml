@@ -20,12 +20,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical">
 
         <RelativeLayout
-            android:layout_width="80dp"
-            android:layout_height="80dp">
+            android:layout_width="60dp"
+            android:layout_height="60dp">
             <View
                 android:id="@+id/circle"
                 android:layout_width="80dp"
@@ -34,41 +34,41 @@
 
             <View
                 android:id="@+id/shadow_left_2"
-                android:layout_width="40dp"
-                android:layout_height="80dp"
+                android:layout_width="30dp"
+                android:layout_height="60dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginEnd="40dp"
+                android:layout_marginEnd="30dp"
                 android:background="@drawable/ic_half_circle"/>
 
             <ImageView
                 android:id="@+id/shadow_left"
-                android:layout_width="20dp"
-                android:layout_height="80dp"
+                android:layout_width="30dp"
+                android:layout_height="60dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginEnd="40dp"
+                android:layout_marginEnd="30dp"
                 android:visibility="visible"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:background="@drawable/ic_half_circle_full"/>
 
             <View
                 android:id="@+id/shadow_right"
-                android:layout_width="40dp"
-                android:layout_height="80dp"
+                android:layout_width="30dp"
+                android:layout_height="60dp"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="40dp"
+                android:layout_marginStart="30dp"
                 android:background="@drawable/ic_half_circle_2" />
 
         </RelativeLayout>
 
         <TextView
             android:id="@+id/tv_step"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textColor="@color/MainBlackColor"
-            android:textSize="30sp"
+            android:textSize="26sp"
             android:textStyle="bold"
             android:layout_marginTop="8dp"
             tools:text="1/15" />

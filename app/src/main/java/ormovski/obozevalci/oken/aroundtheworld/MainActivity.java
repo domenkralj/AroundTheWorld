@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         CIRCLE_WIDTH = circle.getLayoutParams().width;
 
-        setEarthView(R.color.colorAccent, 0 * ONE_PEACE_SIZE);
+        setEarthViewAndText(R.color.colorAccent, 0 * ONE_PEACE_SIZE);
         stepTextView.setText(1 + "/" + NUM_PAGES + 1);
 
         // Triggers page animation progress
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 super.onPageSelected(position);
 
                 stepTextView.setText((position + 1) + "/" + NUM_PAGES);
-                setEarthView(R.color.colorAccent, ((position) * ONE_PEACE_SIZE));
+                setEarthViewAndText(R.color.colorAccent, ((position) * ONE_PEACE_SIZE));
             }
 
             @Override
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 if (second != null) {
                     second.setAnimationProgress(1.0f - positionOffset);
                 }
-                setEarthView(R.color.colorAccent, ((position) * ONE_PEACE_SIZE) + ONE_PEACE_SIZE * positionOffset);
+                setEarthViewAndText(R.color.colorAccent, ((position) * ONE_PEACE_SIZE) + ONE_PEACE_SIZE * positionOffset);
             }
 
         });
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         stepsPager.setAdapter(adapter);
     }
 
-    private void setEarthView(int colorCode, final double state) {
+    private void setEarthViewAndText(int colorCode, final double state) {
         if (state < 0 || state > 1) {
             return;
         }
@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         } else if (background instanceof ColorDrawable) {
             ((ColorDrawable)background).setColor(ContextCompat.getColor(this, colorCode));
         }
+        stepTextView.setTextColor(ContextCompat.getColor(this, colorCode));
 
         if (state >= 0.5) {
             leftShadow.setVisibility(View.INVISIBLE);
