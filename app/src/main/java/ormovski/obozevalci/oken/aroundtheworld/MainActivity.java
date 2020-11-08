@@ -7,16 +7,21 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.animation.ArgbEvaluator;
+import android.animation.ObjectAnimator;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.Shape;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -33,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView leftShadow;
     View leftShadow2;
     View rightShadow;
+    MediaPlayer song;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +57,11 @@ public class MainActivity extends AppCompatActivity {
         CIRCLE_WIDTH = circle.getLayoutParams().width;
 
         setEarthViewAndText(R.color.colorAccent, 0 * ONE_PEACE_SIZE);
-        stepTextView.setText(1 + "/" + NUM_PAGES + 1);
+
+        Animation expandIn = AnimationUtils.loadAnimation(this, R.anim.pop_out);
+        circle.startAnimation(expandIn);
+
+        song = MediaPlayer.create(this, R.raw.sound1);
 
         // Triggers page animation progress
         stepsPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -61,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 super.onPageSelected(position);
 
                 stepTextView.setText((position + 1) + "/" + NUM_PAGES);
-                setEarthViewAndText(R.color.colorAccent, ((position) * ONE_PEACE_SIZE));
+                setMusic(position);
             }
 
             @Override
@@ -78,12 +88,42 @@ public class MainActivity extends AppCompatActivity {
                 if (second != null) {
                     second.setAnimationProgress(1.0f - positionOffset);
                 }
-                setEarthViewAndText(R.color.colorAccent, ((position) * ONE_PEACE_SIZE) + ONE_PEACE_SIZE * positionOffset);
+
+                setEarthViewAndText(R.color.colorPrimaryDark, ((position) * ONE_PEACE_SIZE) + ONE_PEACE_SIZE * positionOffset);
+                if (position == 0) {
+                } else {
+                }
             }
 
         });
 
         stepsPager.setAdapter(adapter);
+
+    }
+
+    private void setMusic(int sceenIndex) {
+        int musicCode = R.raw.sound1;
+        switch (sceenIndex) {
+            case 0:
+                musicCode = R.raw.sound1;
+                break;
+            case 2:
+                musicCode = R.raw.sound_mechanolith;
+                break;
+            case 3:
+                musicCode = R.raw.sound_legend;
+                break;
+            case (NUM_PAGES - 1):
+                musicCode = R.raw.troll_sound;
+                break;
+            default:
+                return;
+        }
+        if (song.isPlaying()) {
+            song.stop();
+        }
+        song = MediaPlayer.create(this, musicCode);
+        song.start();
     }
 
     private void setEarthViewAndText(int colorCode, final double state) {
@@ -98,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
         } else if (background instanceof ColorDrawable) {
             ((ColorDrawable)background).setColor(ContextCompat.getColor(this, colorCode));
         }
+
         stepTextView.setTextColor(ContextCompat.getColor(this, colorCode));
 
         if (state >= 0.5) {
