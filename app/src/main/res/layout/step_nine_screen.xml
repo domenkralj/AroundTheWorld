@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
-        android:text="A man from the sea will\ngive you his blessing"
+        android:text="A man from the sea will\ngive you his blessing."
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="36sp"

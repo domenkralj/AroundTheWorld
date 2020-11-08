@@ -42,12 +42,18 @@ public class StepPage extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        if (page == 17) {
+            view.transitionToEnd();
+        }
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         int layoutId;
         switch (page) {
-            case 0: layoutId = R.layout.step_one_screen;
-                    break;
             case 1: layoutId = R.layout.step_two_screen;
                     break;
             case 2: layoutId = R.layout.step_three_screen;
@@ -70,6 +76,18 @@ public class StepPage extends Fragment {
                     break;
             case 11: layoutId = R.layout.step_twelve_screen;
                     break;
+            case 12: layoutId = R.layout.step_thirteen_screen;
+                    break;
+            case 13: layoutId = R.layout.step_fourteen_screen;
+                    break;
+            case 14: layoutId = R.layout.step_fifteen_screen;
+                    break;
+            case 15: layoutId = R.layout.step_sixteen_screen;
+                    break;
+            case 16: layoutId = R.layout.step_seventeen_screen;
+                    break;
+            case 17: layoutId = R.layout.step_eighteen_screen;
+                    break;
             default: layoutId = R.layout.step_one_screen;
         }
 
@@ -79,7 +97,7 @@ public class StepPage extends Fragment {
 
     public void setAnimationProgress(float progress) {
         // TODO: Set motion layout progress.
-        if (view != null) {
+        if (view != null && page != 17) {
             view.setProgress(progress);
         }
     }

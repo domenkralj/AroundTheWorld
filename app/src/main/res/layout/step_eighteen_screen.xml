@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layoutDescription="@xml/step_eleven_screen_scene">
+    android:background="#212A40"
+    app:layoutDescription="@xml/step_eighteen_screen_scene">
 
-    <View
-        android:id="@+id/view9"
+    <ImageView
+        android:id="@+id/imageView54"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#CECECE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="Observe\nthe curvature of the\nEarth."
-        android:textAlignment="center"
-        android:textColor="@color/MainBlackColor"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView40"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_constelation_ok" />
 
     <ImageView
-        android:id="@+id/imageView40"
+        android:id="@+id/imageView55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView54"
+        app:layout_constraintEnd_toEndOf="@+id/imageView54"
+        app:layout_constraintStart_toStartOf="@+id/imageView54"
+        app:layout_constraintTop_toTopOf="@+id/imageView54"
+        app:srcCompat="@drawable/ic_connections" />
+
+    <ImageView
+        android:id="@+id/imageView56"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_curvature" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_mask" />
 </androidx.constraintlayout.motion.widget.MotionLayout>

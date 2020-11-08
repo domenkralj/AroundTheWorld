@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:text="Beware those bearing the\nmark of night. They will\nkill your"
+        android:text="Beware those bearing the\nmark of night. They will\nkill you."
         android:textAlignment="center"
         android:textColor="@color/MainBlackColor"
         android:textSize="30sp"

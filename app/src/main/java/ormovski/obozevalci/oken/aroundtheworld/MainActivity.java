@@ -29,9 +29,9 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "MainActivity";
-    public static final int NUM_PAGES = 15;
+    public static final int NUM_PAGES = 18;
     private static int CIRCLE_WIDTH;
-    private static double ONE_PEACE_SIZE = 1.0 / (NUM_PAGES - 1);
+    private static final double ONE_PEACE_SIZE = 1.0 / (NUM_PAGES - 1);
 
     TextView stepTextView;
     View circle;
@@ -89,10 +89,17 @@ public class MainActivity extends AppCompatActivity {
                     second.setAnimationProgress(1.0f - positionOffset);
                 }
 
-                setEarthViewAndText(R.color.colorPrimaryDark, ((position) * ONE_PEACE_SIZE) + ONE_PEACE_SIZE * positionOffset);
-                if (position == 0) {
-                } else {
+                double state = ((position) * ONE_PEACE_SIZE) + ONE_PEACE_SIZE * positionOffset;
+
+                int color = R.color.MainCircle;
+                switch (position) {
+                    case 5: color =  R.color.Deamon;
+                        break;
+                    case 8: color = R.color.Underwater;
+                        break;
+                    case 15: color = R.color.Deamon2;
                 }
+                setEarthViewAndText(color, state);
             }
 
         });
